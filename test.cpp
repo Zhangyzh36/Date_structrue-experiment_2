@@ -22,21 +22,21 @@ int main()
 void instructions()
 {
 	cout << endl << "*************************************" << endl;
-	cout << "ÇëÊäÈëÒÔÏÂÖ¸Áî" << endl;
-	cout << "  -[1] ½¨Á¢Õ»" << endl;
-	cout << "  -[2] ½¨Á¢¶ÓÁÐ" << endl;
-	cout << "  -[0] ÍË³ö" << endl;
+	cout << "è¯·è¾“å…¥ä»¥ä¸‹æŒ‡ä»¤" << endl;
+	cout << "  -[1] å»ºç«‹æ ˆ" << endl;
+	cout << "  -[2] å»ºç«‹é˜Ÿåˆ—" << endl;
+	cout << "  -[0] é€€å‡º" << endl;
 	cout << "*************************************" << endl << endl; 
 }
 
 int getCommand()
 {
 	string str;
-	cout << "ÇëÊäÈëÖ¸Áî£º";
+	cout << "è¯·è¾“å…¥æŒ‡ä»¤ï¼š";
 	cin >> str;
 	while ( str[0] != '0' && str[0] != '1' && str[0] != '2' )
 	{
-		cout << "ÇëÊäÈëÕýÈ·µÄÖ¸Áî(0»ò1»ò2)£º";
+		cout << "è¯·è¾“å…¥æ­£ç¡®çš„æŒ‡ä»¤(0æˆ–1æˆ–2)ï¼š";
 		cin >> str; 
 	}
 	
@@ -60,10 +60,12 @@ void testStack()
 {
 	Stack st;
 	
-	cout << endl << "Õ»ÒÑ½¨Á¢£¬ÇëÊäÈëÖ¸Áî:" << endl;
-	cout << "  -[1] ÈëÕ»" << endl;
-	cout << "  -[2] ³öÕ»" << endl;
-	cout << "  -[0] ÍË³ö" << endl;
+	cout << endl << "*************************************" << endl;
+	cout << "æ ˆå·²å»ºç«‹ï¼Œè¯·è¾“å…¥æŒ‡ä»¤:" << endl;
+	cout << "  -[1] å…¥æ ˆ" << endl;
+	cout << "  -[2] å‡ºæ ˆ" << endl;
+	cout << "  -[0] é€€å‡º" << endl;
+	cout << "*************************************" << endl << endl;
 	
 	int command;
 	while ( command = getCommand() ) 
@@ -72,20 +74,20 @@ void testStack()
 			case 1: 
 				{
 					string value;
-					cout << "ÇëÊäÈëÒªÈëÕ»µÄÖµ:";
+					cout << "è¯·è¾“å…¥è¦å…¥æ ˆçš„å€¼:";
 					cin >> value;
 					st.push(value);
-					cout << value << "ÈëÕ»" << endl; 
+					cout << value << "å…¥æ ˆ" << endl; 
 				}
 				break;
 			
 			case 2:
 				{
 					if ( st.empty() )
-						cout << "Õ»¿Õ£¬³öÕ»Ê§°Ü(ÏÂÒç)" << endl;
+						cout << "æ ˆç©ºï¼Œå‡ºæ ˆå¤±è´¥(ä¸‹æº¢)" << endl;
 					else
 					{
-						cout << st.top() << "³öÕ»" << endl;
+						cout << st.top() << "å‡ºæ ˆ" << endl;
 						st.pop(); 
 					} 
 				}
@@ -98,10 +100,12 @@ void testQueue()
 {
 	Queue q;
 	
-	cout << endl << "¶ÓÁÐÒÑ½¨Á¢£¬ÇëÊäÈëÖ¸Áî:" << endl;
-	cout << "  -[1] Èë¶Ó" << endl;
-	cout << "  -[2] ³ö¶Ó" << endl;
-	cout << "  -[0] ÍË³ö" << endl;
+	cout << endl << "*************************************" << endl;
+	cout << "é˜Ÿåˆ—å·²å»ºç«‹ï¼Œè¯·è¾“å…¥æŒ‡ä»¤:" << endl;
+	cout << "  -[1] å…¥é˜Ÿ" << endl;
+	cout << "  -[2] å‡ºé˜Ÿ" << endl;
+	cout << "  -[0] é€€å‡º" << endl;
+	cout << "*************************************" << endl << endl;
 	
 	int command;
 	while ( command = getCommand() ) 
@@ -110,15 +114,15 @@ void testQueue()
 			case 1: 
 				{
 					string value;
-					cout << "ÇëÊäÈëÒªÈë¶ÓµÄÖµ:";
+					cout << "è¯·è¾“å…¥è¦å…¥é˜Ÿçš„å€¼:";
 					cin >> value;
 					if ( q.full() )
-						cout << "¶ÓÁÐÒÑÂú£¬Èë¶ÓÊ§°Ü(ÉÏÒç)" << endl; 
+						cout << "é˜Ÿåˆ—å·²æ»¡ï¼Œå…¥é˜Ÿå¤±è´¥(ä¸Šæº¢)" << endl; 
 					
 					else
 					{
 						q.inque(value);
-						cout << value << "Èë¶Ó" << endl; 
+						cout << value << "å…¥é˜Ÿ" << endl; 
 					} 
 				}
 				break;
@@ -126,12 +130,12 @@ void testQueue()
 			case 2:
 				{
 					if ( q.empty() )
-						cout << "¶Ó¿Õ£¬³ö¶ÓÊ§°Ü(ÏÂÒç)" << endl;
+						cout << "é˜Ÿç©ºï¼Œå‡ºé˜Ÿå¤±è´¥(ä¸‹æº¢)" << endl;
 					else
 					{
 						string temp;
 						q.deque(temp); 
-						cout << temp << "³ö¶Ó" << endl;
+						cout << temp << "å‡ºé˜Ÿ" << endl;
 					} 
 				}
 				break;
