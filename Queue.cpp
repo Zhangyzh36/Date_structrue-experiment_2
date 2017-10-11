@@ -27,6 +27,7 @@ Error_code Queue::deque(char &ch)
 	ch = index[front];
 	front = (front + 1) % MAX_SIZE;
 	_size--;
+	
 	return SUCCEES;
 }
 
