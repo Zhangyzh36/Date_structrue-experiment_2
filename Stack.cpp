@@ -6,7 +6,7 @@ Stack::Stack()
 	_size = 0;
 }
 
-Error_code Stack::push(char value)
+Error_code Stack::push(string value)
 {
 	Node *newPtr = new Node(value);
 
@@ -37,7 +37,7 @@ Error_code Stack::pop()
 	return SUCCEES;
 }
 
-char Stack::top() const
+string Stack::top() const
 {
 	return head->ch;
 }

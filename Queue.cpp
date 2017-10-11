@@ -7,7 +7,7 @@ Queue::Queue()
 	rear = MAX_SIZE - 1;
 }
 
-Error_code Queue::inque(char value)
+Error_code Queue::inque(string value)
 {
 	if ( full() )
 		return OVERFLOW;
@@ -19,7 +19,7 @@ Error_code Queue::inque(char value)
 	return SUCCEES;
 }
 
-Error_code Queue::deque(char &ch)
+Error_code Queue::deque(string &ch)
 {
 	if ( empty() )
 		return UNDERFLOW;
